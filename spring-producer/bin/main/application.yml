@@ -6,6 +6,17 @@ spring:
     url: jdbc:postgresql://localhost:5432/boot
     username: postgres
     password: onward@123
+  boot:
+    admin:
+      client:
+        url: http://localhost:1880
+        username: admin
+        password: admin
+        instance:
+          metadata:
+            usename: admin
+            password: admin
+        api-path: /instances
     
 server:
   port: 1990
@@ -18,5 +29,13 @@ eureka:
       defaultZone: http://localhost:8761/eureka
     instance:
       hostname: localhost
-
+      
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "*"
+  endpoint:
+    health:
+      show-details: ALWAYS  
 

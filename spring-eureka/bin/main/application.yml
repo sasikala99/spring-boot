@@ -4,6 +4,17 @@ spring:
   freemarker:
     template-loader-path: classpath:/templates
     prefer-file-system-access: false
+  boot:
+    admin:
+      client:
+        url: http://localhost:1880
+        username: admin
+        password: admin
+        instance:
+          metadata:
+            usename: admin
+            password: admin
+        api-path: /instances
 
    
 server:
@@ -24,3 +35,12 @@ zuul:
     spring-consumer:
            path: /spring-consumer/**
            url: http://localhost:1991
+           
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "*"
+  endpoint:
+    health:
+      show-details: ALWAYS  

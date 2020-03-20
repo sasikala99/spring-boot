@@ -21,6 +21,7 @@ repositories {
 
 ext {
 	set('springCloudVersion', "Hoxton.SR3")
+	set('springBootAdminVersion', "2.2.1")
 }
 
 dependencies {
@@ -28,6 +29,7 @@ dependencies {
 	implementation 'org.springframework.boot:spring-boot-starter-web'
 	implementation 'org.springframework.cloud:spring-cloud-starter-netflix-eureka-client'
 	implementation 'org.springframework.cloud:spring-cloud-starter-netflix-zuul'
+	implementation 'de.codecentric:spring-boot-admin-starter-client'
 	developmentOnly 'org.springframework.boot:spring-boot-devtools'
 	testImplementation('org.springframework.boot:spring-boot-starter-test') {
 		exclude group: 'org.junit.vintage', module: 'junit-vintage-engine'
@@ -37,6 +39,7 @@ dependencies {
 dependencyManagement {
 	imports {
 		mavenBom "org.springframework.cloud:spring-cloud-dependencies:${springCloudVersion}"
+		mavenBom "de.codecentric:spring-boot-admin-dependencies:${springBootAdminVersion}"
 	}
 }
 
