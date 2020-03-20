@@ -1,0 +1,21 @@
+spring:
+  application:
+    name: spring-producer
+  datasource:
+    driver-class-name: org.postgresql.Driver
+    url: jdbc:postgresql://localhost:5432/boot
+    username: postgres
+    password: onward@123
+  thymeleaf:
+    prefix: classpath:/templates/
+    suffix: .html
+    
+server:
+  port: 1993
+  
+  
+
+      
+
+
+
