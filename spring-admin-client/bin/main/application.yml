@@ -1,0 +1,34 @@
+spring:
+  application:
+    name: spring-admin-client
+  datasource:
+    driver-class-name: org.postgresql.Driver
+    url: jdbc:postgresql://localhost:5432/boot
+    username: postgres
+    password: onward@123
+  boot:
+    admin:
+      client:
+        url: http://localhost:1880
+        username: admin
+        password: admin
+        instance:
+          metadata:
+            usename: admin
+            password: admin
+        api-path: /instances
+    
+server:
+  port: 1881
+  
+  
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "*"
+  endpoint:
+    health:
+      show-details: ALWAYS  
+      
+      
